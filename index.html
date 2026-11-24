@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dat Tang | Software Engineer</title>
+  <meta name="description"
+    content="Dat Tang: Computer Science student at San Jose State University building AI agents, retrieval systems, and backend pipelines.">
+
+  <!--
+    - set theme before paint to avoid a flash of the wrong theme
+  -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (e) { }
+      var theme = saved || (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <!--
+    - favicon
+  -->
+  <link rel="icon" href="./assets/images/avatar.png" type="image/png">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/avatar.png" alt="Dat Tang" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Dat Tang">Dat Tang</h1>
+
+          <p class="title">Software Engineer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+
+              <a href="https://www.linkedin.com/in/dattang12" class="contact-link" target="_blank"
+                rel="noopener">in/dattang12</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-github"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">GitHub</p>
+
+              <a href="https://github.com/dattang12" class="contact-link" target="_blank" rel="noopener">dattang12</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Education</p>
+
+              <p class="contact-link">San Jose State University</p>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>San Francisco, CA</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/dattang12" class="social-link" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/dattang12" class="social-link" target="_blank" rel="noopener"
+              aria-label="GitHub">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://x.com/Dattang1201" class="social-link" target="_blank" rel="noopener" aria-label="X">
+              <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+              </svg>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Hobbies</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode"
+              title="Switch to light mode">
+              <ion-icon name="sunny-outline" class="theme-icon-sun"></ion-icon>
+              <ion-icon name="moon-outline" class="theme-icon-moon"></ion-icon>
+            </button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm a Computer Science student at San José State University, minoring in Mathematics. I enjoy building
+            software, especially AI-powered applications, backend systems, and tools that solve real-world problems.
+          </p>
+
+          <p>
+            I've worked with startups, contributed to open-source AI projects, and built products across different
+            stages, from early prototypes to production features. My experience includes developing AI-driven
+            discovery systems at Originalis AI, building product features at Leechy, and working on healthcare AI
+            applications through IBM's AI Fellowship.
+          </p>
+
+          <p>
+            I'm always looking to take on challenging problems, learn quickly, and turn ideas into things people can
+            actually use.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I enjoy building</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="hardware-chip-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">AI-powered products</h4>
+
+                <p class="service-item-text">
+                  Turning ideas into useful applications with LLMs, intelligent workflows, and agent-driven experiences.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="server-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Systems that scale</h4>
+
+                <p class="service-item-text">
+                  Designing backend architecture and data flows that make applications reliable as they grow.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="terminal-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Developer tools &amp; automation</h4>
+
+                <p class="service-item-text">
+                  Building tools that simplify complex workflows, automate repetitive tasks, and make developers more productive.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="flask-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Experimenting &amp; problem-solving</h4>
+
+                <p class="service-item-text">
+                  Exploring new technologies, testing ideas, and finding practical ways to solve challenging problems.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - achievements
+        -->
+
+        <section class="achievements">
+
+          <h3 class="h3 achievements-title">Achievements</h3>
+
+          <ul class="achievements-list">
+
+            <li class="achievement-item">
+              <div class="icon-box">
+                <ion-icon name="trophy-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h4 class="h4 achievement-item-title">Stanford × Google DeepMind Hackathon</h4>
+                <p class="achievement-text">3rd Place, Google AI Studio Gemini Track + 5th Place Overall</p>
+              </div>
+            </li>
+
+            <li class="achievement-item">
+              <div class="icon-box">
+                <ion-icon name="ribbon-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h4 class="h4 achievement-item-title">IBM Ethical AI Hackathon</h4>
+                <p class="achievement-text">2nd Place Overall</p>
+              </div>
+            </li>
+
+            <li class="achievement-item">
+              <div class="icon-box">
+                <ion-icon name="school-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h4 class="h4 achievement-item-title">GPA 3.92 / 4.00</h4>
+                <p class="achievement-text">B.S. Computer Science, San Jose State University</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">San Jose State University</h4>
+                <time class="exp-date">Aug 2025 — May 2028</time>
+              </div>
+              <p class="exp-company">Bachelor's Degree, Computer Science &amp; Mathematics</p>
+              <ul class="exp-meta">
+                <li class="exp-chip exp-chip-accent"><ion-icon name="ribbon-outline"></ion-icon>GPA 3.92 / 4.00</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>San Jose, CA</li>
+              </ul>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Cosumnes River College</h4>
+                <time class="exp-date">Jun 2023 — May 2025</time>
+              </div>
+              <p class="exp-company">Associate's Degree, Mathematics &amp; Computer Science</p>
+              <ul class="exp-meta">
+                <li class="exp-chip exp-chip-accent"><ion-icon name="ribbon-outline"></ion-icon>GPA 4.00 / 4.00</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>Sacramento, CA</li>
+              </ul>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">City College of San Francisco</h4>
+                <time class="exp-date">Aug 2022 — May 2023</time>
+              </div>
+              <p class="exp-company">Associate's Degree, Computer Science</p>
+              <ul class="exp-meta">
+                <li class="exp-chip exp-chip-accent"><ion-icon name="ribbon-outline"></ion-icon>GPA 4.00 / 4.00</li>
+                <li class="exp-chip exp-chip-accent"><ion-icon name="medal-outline"></ion-icon>Dean's Honor List</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>San Francisco, CA</li>
+              </ul>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Software Engineer</h4>
+                <time class="exp-date">Jul 2026 — Sep 2026</time>
+              </div>
+              <p class="exp-company">Originalis AI</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Internship</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>New York City · Hybrid</li>
+              </ul>
+              <p class="timeline-text">Contributed to backend and LLM systems on the network sourcing module for Originalis, an AI-native platform for private capital markets ($5M seed-funded).</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Software Engineer</h4>
+                <time class="exp-date">Apr 2026 — Jun 2026</time>
+              </div>
+              <p class="exp-company">Leechy</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Internship</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>San Jose, CA · On-site</li>
+              </ul>
+              <p class="timeline-text">Delivered production features for a rental marketplace platform, developing backend logic, MCP server, database workflows, and frontend improvements to enhance reliability and user experience.</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Software Engineer</h4>
+                <time class="exp-date">Jan 2026 — Mar 2026</time>
+              </div>
+              <p class="exp-company">REC – My Recommendation App</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Internship</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>Chicago, IL · Remote</li>
+              </ul>
+              <p class="timeline-text">Built the website and backend from scratch for a recommendation system, developing end-to-end functionality across the frontend, backend APIs, and database.</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">AI Fellow</h4>
+                <time class="exp-date">Oct 2025 — Dec 2025</time>
+              </div>
+              <p class="exp-company">IBM</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Apprenticeship</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>San Jose, CA · Hybrid</li>
+              </ul>
+              <p class="timeline-text">Designed and implemented an AI healthcare application using IBM watsonx, leveraging Retrieval-Augmented Generation (RAG) to enhance information retrieval and question answering.</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Student Tutor</h4>
+                <time class="exp-date">Aug 2024 — May 2025</time>
+              </div>
+              <p class="exp-company">Cosumnes River College</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Part-time</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>Sacramento, CA · On-site</li>
+              </ul>
+              <p class="timeline-text">Tutored students in Java and C++ through individual and group sessions, supporting coursework, programming concepts, and assignment completion.</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Student Assistant</h4>
+                <time class="exp-date">Jan 2024 — May 2024</time>
+              </div>
+              <p class="exp-company">Cosumnes River College</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Part-time</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>Sacramento, CA · On-site</li>
+              </ul>
+              <p class="timeline-text">Provided instructional support for Calculus 3 by grading assignments, assisting with classroom activities, and helping ensure smooth course operations.</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Student Assistant</h4>
+                <time class="exp-date">Jan 2023 — Dec 2023</time>
+              </div>
+              <p class="exp-company">City College of San Francisco</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Part-time</li>
+                <li class="exp-chip"><ion-icon name="location-outline"></ion-icon>San Francisco, CA · On-site</li>
+              </ul>
+              <p class="timeline-text">Provided instructional support for Calculus 1 and Calculus 2 by grading assignments, assisting with classroom activities, and helping ensure smooth course operations.</p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="heart-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Volunteering</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Tech &amp; Product Team Member</h4>
+                <time class="exp-date">Nov 2026 — Present</time>
+              </div>
+              <p class="exp-company">Viet Spark</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Science and Technology</li>
+              </ul>
+              <p class="timeline-text">Member of the Tech &amp; Product team for Break Into Tech (BIT) 2027.</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Student Volunteer</h4>
+                <time class="exp-date">Oct 2026</time>
+              </div>
+              <p class="exp-company">San José State University</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Education</li>
+              </ul>
+              <p class="timeline-text">Helped set up the venue and logistics for SpartHill Hacks, a hackathon at San José State University.</p>
+            </li>
+
+            <li class="timeline-item">
+              <div class="exp-head">
+                <h4 class="h4 exp-role">Member, AI Strategy</h4>
+                <time class="exp-date">May 2026 — Jul 2026</time>
+              </div>
+              <p class="exp-company">Draper Dragon</p>
+              <ul class="exp-meta">
+                <li class="exp-chip">Science and Technology</li>
+              </ul>
+              <p class="timeline-text">Joined Draper Dragon's AI Strategy group to brainstorm, learn, and contribute ideas on practical uses of AI.</p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Technical skills</h3>
+
+          <div class="skills-groups">
+
+            <div class="skills-group">
+              <h4 class="h5">Languages</h4>
+              <ul class="tag-list">
+                <li class="tag">Python</li>
+                <li class="tag">Java</li>
+                <li class="tag">TypeScript</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">C++</li>
+              </ul>
+            </div>
+
+            <div class="skills-group">
+              <h4 class="h5">Frameworks</h4>
+              <ul class="tag-list">
+                <li class="tag">FastAPI</li>
+                <li class="tag">React</li>
+                <li class="tag">LangChain</li>
+                <li class="tag">PyTorch</li>
+                <li class="tag">scikit-learn</li>
+              </ul>
+            </div>
+
+            <div class="skills-group">
+              <h4 class="h5">Databases</h4>
+              <ul class="tag-list">
+                <li class="tag">PostgreSQL</li>
+                <li class="tag">MySQL</li>
+                <li class="tag">pgvector</li>
+                <li class="tag">Supabase</li>
+              </ul>
+            </div>
+
+            <div class="skills-group">
+              <h4 class="h5">AI / ML</h4>
+              <ul class="tag-list">
+                <li class="tag">Retrieval-Augmented Generation (RAG)</li>
+                <li class="tag">Vector Search</li>
+                <li class="tag">Model Evaluation</li>
+                <li class="tag">Prompt Engineering</li>
+                <li class="tag">LLM Agent Design</li>
+                <li class="tag">LLM APIs</li>
+                <li class="tag">Model Context Protocol (MCP)</li>
+                <li class="tag">Hugging Face</li>
+              </ul>
+            </div>
+
+            <div class="skills-group">
+              <h4 class="h5">Infrastructure &amp; tooling</h4>
+              <ul class="tag-list">
+                <li class="tag">Docker</li>
+                <li class="tag">AWS</li>
+                <li class="tag">Claude Code</li>
+                <li class="tag">Linux/Unix</li>
+                <li class="tag">GitHub Actions</li>
+                <li class="tag">Kubernetes</li>
+                <li class="tag">Langfuse</li>
+                <li class="tag">Git</li>
+                <li class="tag">REST APIs</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PROJECTS
+      -->
+
+      <article class="projects-page" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <ul class="project-cards">
+
+          <li class="project-card">
+            <div class="project-card-head">
+              <div class="icon-box">
+                <ion-icon name="briefcase-outline"></ion-icon>
+              </div>
+              <div>
+                <h3 class="h3 project-card-title">ApplyWisely</h3>
+                <p class="project-badge"><ion-icon name="trophy"></ion-icon>Top 3 Finalist · Stanford × Google DeepMind Hackathon 2026</p>
+              </div>
+            </div>
+            <p class="project-card-desc">AI-powered job application tracker that extracts job details from screenshots using Gemini 2.0 Flash and auto-updates statuses via a Gmail agent.</p>
+            <ul class="tag-list">
+              <li class="tag">Gemini 2.0 Flash</li>
+              <li class="tag">Gmail agent</li>
+              <li class="tag">Screenshot extraction</li>
+              <li class="tag">AI agents</li>
+            </ul>
+          </li>
+
+          <li class="project-card">
+            <div class="project-card-head">
+              <div class="icon-box">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+              <div>
+                <h3 class="h3 project-card-title">EthicsLens</h3>
+                <p class="project-badge"><ion-icon name="trophy"></ion-icon>Top 2 Finalist · IBM Ethical AI Hackathon 2025</p>
+              </div>
+            </div>
+            <p class="project-card-desc">AI-powered document ethics analyzer built on IBM watsonx that scans documents for bias, fairness violations, and ethical risks using Granite LLM, with explainable compliance scoring.</p>
+            <ul class="tag-list">
+              <li class="tag">IBM watsonx</li>
+              <li class="tag">Granite LLM</li>
+              <li class="tag">Explainable AI</li>
+              <li class="tag">Responsible AI</li>
+            </ul>
+          </li>
+
+          <li class="project-card">
+            <div class="project-card-head">
+              <div class="icon-box">
+                <ion-icon name="git-pull-request-outline"></ion-icon>
+              </div>
+              <div>
+                <h3 class="h3 project-card-title">Green Checker</h3>
+                <p class="project-badge"><ion-icon name="star"></ion-icon>Featured project</p>
+              </div>
+            </div>
+            <p class="project-card-desc">Autonomous GitHub issue-fixing agent with sandboxed test verification.</p>
+            <ul class="tag-list">
+              <li class="tag">Python</li>
+              <li class="tag">Claude API</li>
+              <li class="tag">Docker</li>
+              <li class="tag">pytest</li>
+              <li class="tag">GitHub Actions</li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <a href="https://github.com/dattang12" class="more-link" target="_blank" rel="noopener">
+          <ion-icon name="logo-github"></ion-icon>
+          <span>More on GitHub</span>
+        </a>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #HOBBIES
+      -->
+
+      <article class="hobbies" data-page="hobbies">
+
+        <header>
+          <h2 class="h2 article-title">Hobbies</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Outside of building software, here's what keeps me going.
+          </p>
+        </section>
+
+        <section class="service">
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Family time</h4>
+
+                <p class="service-item-text">
+                  Family comes first. Weekends at home and big meals together keep me grounded.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="heart-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">My girlfriend</h4>
+
+                <p class="service-item-text">
+                  Trying new food spots, going on trips together, and making time for each other.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="airplane-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Travel</h4>
+
+                <p class="service-item-text">
+                  Exploring new cities and cultures, and always planning the next trip.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="camera-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+
+                <p class="service-item-text">
+                  Taking pictures wherever I go, from city streets to travel views.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="basketball-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Basketball</h4>
+
+                <p class="service-item-text">
+                  Pickup games whenever I can find a court. Best way to reset after a long day of coding.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="game-controller-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Video games</h4>
+
+                <p class="service-item-text">
+                  Unwinding with friends online, and always curious about how the games are built.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://maps.google.com/maps?q=San%20Francisco%2C%20CA&amp;z=11&amp;output=embed" width="400"
+              height="300" loading="lazy" title="Map of San Francisco, CA"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Let's connect</h3>
+
+          <p class="form-note">The best way to reach me is a message on LinkedIn. I'm open to software engineering
+            and AI roles, collaborations, and hackathon teams.</p>
+
+          <div class="connect-actions">
+            <a href="https://www.linkedin.com/in/dattang12" class="form-btn connect-btn" target="_blank"
+              rel="noopener">
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <span>Message me on LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/dattang12" class="form-btn connect-btn" target="_blank" rel="noopener">
+              <ion-icon name="logo-github"></ion-icon>
+              <span>View my GitHub</span>
+            </a>
+          </div>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
