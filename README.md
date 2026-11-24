@@ -17,7 +17,3 @@ Open `index.html` in a browser, or serve the folder:
 ```bash
 npx serve .
 ```
-
-## Credits
-
-Based on the open-source [vCard personal portfolio template](https://github.com/codewithsadee/vcard-personal-portfolio) by codewithsadee (MIT License).
